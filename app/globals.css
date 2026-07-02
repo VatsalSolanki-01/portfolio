@@ -4,22 +4,30 @@
   --background: #f7f7f3;
   --foreground: #111111;
   --muted: #4a4a4a;
-  --surface: #ffffff;
-  --surface-2: #f0f0ea;
+  --surface: rgba(255, 255, 255, 0.78);
+  --surface-2: #efefe8;
   --border: rgba(17, 17, 17, 0.12);
+
+  --glow-primary: rgba(255, 255, 255, 0.9);
+  --glow-secondary: rgba(173, 216, 255, 0.32);
+  --glow-tertiary: rgba(255, 255, 255, 0.22);
 }
 
 .dark {
   --background: #050505;
   --foreground: #f5f5f5;
   --muted: rgba(245, 245, 245, 0.72);
-  --surface: rgba(255, 255, 255, 0.03);
+  --surface: rgba(255, 255, 255, 0.04);
   --surface-2: rgba(255, 255, 255, 0.06);
   --border: rgba(255, 255, 255, 0.12);
+
+  --glow-primary: rgba(255, 255, 255, 0.22);
+  --glow-secondary: rgba(120, 170, 255, 0.12);
+  --glow-tertiary: rgba(255, 255, 255, 0.08);
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 body {
@@ -28,8 +36,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   min-height: 100vh;
   transition:
-    background-color 200ms ease,
-    color 200ms ease;
+    background-color 250ms ease,
+    color 250ms ease;
 }
 
 * {
@@ -39,4 +47,33 @@ body {
 ::selection {
   background: rgba(127, 127, 127, 0.25);
   color: var(--foreground);
+}
+
+.hero-glow-primary {
+  background: radial-gradient(
+    circle,
+    var(--glow-primary) 0%,
+    var(--glow-secondary) 36%,
+    transparent 74%
+  );
+  opacity: 0.95;
+}
+
+.hero-glow-secondary {
+  background: radial-gradient(
+    circle,
+    var(--glow-tertiary) 0%,
+    var(--glow-secondary) 38%,
+    transparent 76%
+  );
+  opacity: 0.9;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
 }

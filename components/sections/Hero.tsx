@@ -1,59 +1,75 @@
+"use client";
+
 import { heroContent } from "@/data/portfolio";
-import { siteConfig } from "@/constants/site";
+import { getLenisInstance } from "@/lib/lenis";
 
 export default function Hero() {
+  const handleProjectsScroll = () => {
+    const lenis = getLenisInstance();
+    const element = document.querySelector("#projects");
+
+    if (lenis && element instanceof HTMLElement) {
+      lenis.scrollTo(element, {
+        duration: 1.5,
+        offset: -20,
+      });
+      return;
+    }
+
+    if (element instanceof HTMLElement) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
-    <section className="border-b border-[var(--border)]">
-      <div className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-6xl items-center px-6 py-20">
-        <div className="max-w-4xl">
-          <h1 className="max-w-4xl text-5xl font-semibold leading-tight text-[var(--foreground)] md:text-7xl">
-            {heroContent.name}
-          </h1>
+    <section
+      id="top"
+      className="relative overflow-hidden border-b border-[var(--border)] pt-36 pb-24 md:pt-44 md:pb-32"
+    >
+      <div className="pointer-events-none absolute inset-0 z-0">
+        <div className="absolute left-1/2 top-[-220px] h-[500px] w-[980px] -translate-x-1/2 rounded-full hero-glow-primary blur-3xl md:top-[-240px] md:h-[620px] md:w-[1200px]" />
+        <div className="absolute left-1/2 top-[10px] h-[280px] w-[620px] -translate-x-1/2 rounded-full hero-glow-secondary blur-3xl md:top-[40px] md:h-[360px] md:w-[760px]" />
+      </div>
 
-          <p className="mt-6 max-w-3xl text-xl leading-relaxed text-[var(--foreground)]/85 md:text-2xl">
-            {heroContent.role}
+      <div className="relative z-10 mx-auto max-w-6xl px-6">
+        <p className="text-sm uppercase tracking-[0.35em] text-[var(--muted)]">
+          {heroContent.role}
+        </p>
+
+        <h1 className="mt-6 max-w-4xl text-5xl font-semibold tracking-tight text-[var(--foreground)] md:text-7xl">
+          {heroContent.name}
+        </h1>
+
+        <p className="mt-8 max-w-3xl text-lg leading-9 text-[var(--muted)] md:text-xl">
+          {heroContent.intro}
+        </p>
+
+        <div className="mt-10 flex flex-wrap items-center gap-4">
+          <button
+            type="button"
+            onClick={handleProjectsScroll}
+            className="inline-flex rounded-full border border-[var(--border)] bg-[var(--foreground)] px-6 py-3 text-sm font-medium text-[var(--background)] transition hover:opacity-90"
+          >
+            View Projects
+          </button>
+
+          <a
+            href="/resume/VatsalSolanki.pdf"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex rounded-full border border-[var(--border)] px-6 py-3 text-sm font-medium text-[var(--foreground)] transition hover:bg-[var(--surface-2)]"
+          >
+            Download Resume
+          </a>
+        </div>
+
+        <div className="mt-14">
+          <p className="text-sm uppercase tracking-[0.3em] text-[var(--muted)]">
+            Based in
           </p>
-
-          <p className="mt-8 max-w-3xl text-base leading-8 text-[var(--muted)] md:text-lg">
-            {heroContent.intro}
+          <p className="mt-3 text-lg text-[var(--foreground)]">
+            {heroContent.location}
           </p>
-
-          <p className="mt-4 text-sm text-[var(--muted)]">
-            Based in {heroContent.location}
-          </p>
-
-          <div className="mt-10 flex flex-wrap gap-4">
-            <a
-              href="#projects"
-              className="rounded-full border border-[var(--foreground)] bg-[var(--foreground)] px-6 py-3 text-sm font-medium text-[var(--background)] transition hover:opacity-90"
-            >
-              View Projects
-            </a>
-
-            <a
-              href={siteConfig.links.resume}
-              download
-              className="rounded-full border border-[var(--border)] px-6 py-3 text-sm font-medium text-[var(--foreground)] transition hover:bg-[var(--surface-2)]"
-            >
-              Download Resume
-            </a>
-
-            <a
-              href={siteConfig.links.github}
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-full border border-[var(--border)] px-6 py-3 text-sm font-medium text-[var(--foreground)] transition hover:bg-[var(--surface-2)]"
-            >
-              GitHub
-            </a>
-
-            <a
-              href="#contact"
-              className="rounded-full border border-[var(--border)] px-6 py-3 text-sm font-medium text-[var(--foreground)] transition hover:bg-[var(--surface-2)]"
-            >
-              Contact
-            </a>
-          </div>
         </div>
       </div>
     </section>
