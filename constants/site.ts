@@ -1,13 +1,14 @@
 export const siteConfig = {
   name: "Vatsal Solanki",
-  title: "Vatsal Solanki | DevOps Engineer & Backend Enthusiast",
+  title: "Vatsal Solanki | DevOps Engineer",
   description:
-    "Portfolio of Vatsal Solanki, an aspiring DevOps engineer with backend interests in Go, Kubernetes, cloud infrastructure, automation, and scalable systems.",
+    "Portfolio of Vatsal Solanki, a DevOps engineer focused on cloud infrastructure, CI/CD, containerization, Kubernetes, observability, and backend systems.",
   url: "https://vatsalsolanki.vercel.app",
   ogImage: "/og-image.png",
   links: {
-    github: "https://github.com/VatsalSolanki-01",
-    linkedin: "https://www.linkedin.com/",
-    email: "mailto:your-email@example.com",
+    github: "https://github.com/VatsalSolanki-01/",
+    linkedin: "https://www.linkedin.com/in/vatsal-solanki19/",
+    email: "mailto:solanki.vatsal009@gmail.com",
+    resume: "/resume/VatsalSolanki.pdf",
   },
 };
