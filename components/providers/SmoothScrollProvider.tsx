@@ -14,11 +14,10 @@ export default function SmoothScrollProvider({
   useEffect(() => {
     const lenis = new Lenis({
       autoRaf: true,
-      duration: 2.15,
-      lerp: 0.045,
+      duration: 1.7,
       smoothWheel: true,
       syncTouch: false,
-      wheelMultiplier: 1.2,
+      wheelMultiplier: 0.95,
       touchMultiplier: 1,
     });
 

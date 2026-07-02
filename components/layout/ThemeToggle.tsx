@@ -1,37 +1,32 @@
 "use client";
 
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useTheme } from "@/components/providers/ThemeProvider";
 
 export default function ThemeToggle() {
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const { theme, mounted, toggleTheme } = useTheme();
 
   if (!mounted) {
     return (
       <button
         type="button"
-        className="rounded-full border border-[var(--border)] px-4 py-2 text-sm text-[var(--foreground)] opacity-70"
+        aria-label="Toggle theme"
+        className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)]"
       >
-        Theme
+        <span className="text-sm text-[var(--foreground)]">◐</span>
       </button>
     );
   }
 
-  const isDark = theme === "dark";
-
   return (
     <button
       type="button"
-      onClick={() => setTheme(isDark ? "light" : "dark")}
+      onClick={toggleTheme}
       aria-label="Toggle theme"
-      className="rounded-full border border-[var(--border)] px-4 py-2 text-sm text-[var(--foreground)] transition hover:bg-[var(--surface-2)]"
+      className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)] transition hover:bg-[var(--surface-2)]"
     >
-      {isDark ? "Light" : "Dark"}
+      <span className="text-sm text-[var(--foreground)]">
+        {theme === "light" ? "☾" : "☀"}
+      </span>
     </button>
   );
 }

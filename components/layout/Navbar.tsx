@@ -1,56 +1,43 @@
 "use client";
 
-import { navItems } from "@/data/portfolio";
-import ThemeToggle from "./ThemeToggle";
-import { getLenisInstance } from "@/lib/lenis";
+import { navItems, heroContent } from "@/data/portfolio";
+import ThemeToggle from "@/components/layout/ThemeToggle";
+import { scrollToId } from "@/lib/lenis";
 
 export default function Navbar() {
-  const handleScroll = (target: string) => {
-    const lenis = getLenisInstance();
-    const element = document.querySelector(target);
-
-    if (lenis && element instanceof HTMLElement) {
-      lenis.scrollTo(element, {
-        duration: 1.5,
-        offset: -20,
-      });
-      return;
-    }
-
-    if (element instanceof HTMLElement) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+  const handleClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    target: string
+  ) => {
+    e.preventDefault();
+    scrollToId(target);
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50">
-      <div className="mx-auto max-w-6xl px-6 pt-5">
-        <div className="flex items-center justify-between rounded-full border border-[var(--border)] bg-[color:color-mix(in_srgb,var(--background)_46%,transparent)] px-4 py-3 backdrop-blur-2xl supports-[backdrop-filter]:bg-[color:color-mix(in_srgb,var(--background)_40%,transparent)] md:px-5">
-          <button
-            type="button"
-            onClick={() => handleScroll("#top")}
-            className="text-sm font-medium uppercase tracking-[0.2em] text-[var(--foreground)]"
-          >
-            Vatsal Solanki
-          </button>
+    <header className="fixed top-0 left-0 right-0 z-[100] px-4 pt-4">
+      <div className="mx-auto flex max-w-6xl items-center justify-between rounded-full border border-[var(--border)] bg-[var(--surface)]/85 px-5 py-3 shadow-lg backdrop-blur-md">
+        <a
+          href="#top"
+          onClick={(e) => handleClick(e, "top")}
+          className="text-sm font-semibold tracking-[0.08em] text-[var(--foreground)]"
+        >
+          {heroContent.name}
+        </a>
 
-          <div className="flex items-center gap-3 md:gap-4">
-            <nav className="hidden items-center gap-5 md:flex">
-              {navItems.map((item) => (
-                <button
-                  key={item.href}
-                  type="button"
-                  onClick={() => handleScroll(item.href)}
-                  className="text-sm text-[var(--muted)] transition hover:text-[var(--foreground)]"
-                >
-                  {item.label}
-                </button>
-              ))}
-            </nav>
+        <nav className="hidden md:flex items-center gap-6">
+          {navItems.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              onClick={(e) => handleClick(e, item.href.replace("#", ""))}
+              className="text-sm text-[var(--muted)] transition hover:text-[var(--foreground)]"
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
 
-            <ThemeToggle />
-          </div>
-        </div>
+        <ThemeToggle />
       </div>
     </header>
   );

@@ -1,23 +1,4 @@
-export type NavItem = {
-  label: string;
-  href: string;
-};
-
-export type Project = {
-  title: string;
-  description: string;
-  stack: string[];
-  github: string;
-  live?: string;
-  image?: string;
-};
-
-export type Certification = {
-  title: string;
-  issuer: string;
-};
-
-export const navItems: NavItem[] = [
+export const navItems = [
   { label: "About", href: "#about" },
   { label: "Projects", href: "#projects" },
   { label: "Certifications", href: "#certifications" },
@@ -28,20 +9,21 @@ export const heroContent = {
   name: "Vatsal Solanki",
   role: "DevOps Engineer",
   intro:
-    "BCA (Hons) Cloud Computing graduate with AWS and Google Cloud certifications. I build reliable cloud infrastructure and work across Docker, Jenkins, Kubernetes, Go, Linux, and observability tooling.",
+    "BCA (Hons) Cloud Computing Graduate AWS & Google Cloud Certified | DevOps Engineer skilled in Docker, Jenkins, Go, Linux, and cloud infrastructure. I build reliable, scalable systems with a strong focus on automation, observability, and backend engineering.",
   location: "Ahmedabad, Gujarat",
+  email: "solanki.vatsal009@gmail.com",
+  github: "https://github.com/VatsalSolanki-01/",
+  linkedin: "https://www.linkedin.com/in/vatsal-solanki19/",
 };
 
 export const aboutContent = {
-  title: "About",
   paragraphs: [
-    "I’m a DevOps focused engineer with a strong interest in building reliable, scalable, and production oriented systems. My work is centered around containerization, CI/CD, infrastructure automation, Kubernetes, and backend aware system design.",
-    "I enjoy understanding how applications move from code to production, how infrastructure should be automated, and how monitoring and observability help teams operate systems with confidence. Alongside DevOps, I also care about backend engineering fundamentals because I want to understand the systems I deploy, not just the infrastructure around them.",
-    "This portfolio itself is being built incrementally as an engineering project with versioned development, Git based workflow, clean component structure, and continuous deployment through GitHub and Vercel.",
+    "I’m a DevOps-focused engineer with a strong interest in cloud infrastructure, automation, backend systems, and observability.",
+    "I enjoy building projects that combine practical deployment workflows with real engineering depth, whether that’s containerizing services, setting up CI/CD pipelines, deploying to Kubernetes, or creating monitoring stacks that reflect how production systems are actually operated.",
   ],
   skills: [
     "Computer Networking",
-    "Operating Systems",
+    "Operating System",
     "Linux",
     "Git",
     "GitHub",
@@ -57,11 +39,38 @@ export const aboutContent = {
   ],
 };
 
-export const projects: Project[] = [
+export const certifications = [
+  "AWS Certified Cloud Practitioner",
+  "Google Cloud Engineering Certificate",
+];
+
+export const projects = [
+  {
+    title: "Randomverse API",
+    description:
+      "A hands-on DevOps project focused on Docker containerization, Jenkins CI/CD automation, Docker Hub image management, and automated Railway deployment.",
+    github: "https://github.com/VatsalSolanki-01/randomverse-api",
+    live: "",
+    image: "/projects/Randomverse.jpeg",
+    stack: ["Docker", "Jenkins", "Docker Hub", "Railway", "Go"],
+  },
+  {
+    title: "Microservices Observability Stack",
+    description:
+      "This project builds a complete observability environment for a microservices based system using open source monitoring tools. Application servers run microservices along with monitoring agents that collect metrics and logs. These signals are then sent to a centralized monitoring server where they are stored, visualized, and used for alerting. This setup simulates how real world DevOps and SRE teams monitor production systems.",
+    github:
+      "https://github.com/VatsalSolanki-01/microservices-observability-stack",
+    live: "",
+    image: "/projects/microservices-observability-stack.png",
+    stack: ["Prometheus", "Grafana", "Loki", "Alertmanager", "Docker"],
+  },
   {
     title: "JobTracker",
     description:
-      "JobTracker is a containerized web application composed of a React frontend, Go backend, MySQL database, and Nginx reverse proxy. It demonstrates an end to end DevOps workflow where GitHub pushes trigger Jenkins pipelines that build Docker images, push them to Docker Hub, and deploy the latest version to a Kubernetes cluster.",
+      "JobTracker is a containerized web application consisting of a React frontend, Go backend, MySQL database, and Nginx reverse proxy. The project demonstrates how modern DevOps teams automate software delivery using Jenkins pipelines and Kubernetes. Whenever code is pushed to GitHub, Jenkins automatically builds Docker images, pushes them to Docker Hub, and deploys the latest version of the application to a Kubernetes cluster.",
+    github: "https://github.com/VatsalSolanki-01/jobtracker",
+    live: "",
+    image: "/projects/jobtracker.jpeg",
     stack: [
       "React",
       "Go",
@@ -70,60 +79,14 @@ export const projects: Project[] = [
       "Docker",
       "Jenkins",
       "Kubernetes",
-      "Docker Hub",
     ],
-    github: "https://github.com/VatsalSolanki-01/jobtracker",
-    image: "/projects/jobtracker.jpeg",
-  },
-  {
-    title: "Randomverse API",
-    description:
-      "A hands on DevOps project focused on Docker containerization, Jenkins based CI/CD automation, Docker Hub image management, and automated deployment using Railway. The project is designed to demonstrate practical software delivery and deployment workflow automation.",
-    stack: [
-      "Go",
-      "Docker",
-      "Jenkins",
-      "Docker Hub",
-      "Railway",
-      "CI/CD",
-    ],
-    github: "https://github.com/VatsalSolanki-01/randomverse-api",
-    image: "/projects/Randomverse.jpeg",
-  },
-  {
-    title: "Microservices Observability",
-    description:
-      "A complete observability setup for a microservices based system using open source monitoring tools. Application servers run services alongside monitoring agents that collect metrics and logs, which are then shipped to a centralized monitoring server for storage, visualization, and alerting. The project simulates how DevOps and SRE teams monitor production systems.",
-    stack: [
-      "Docker",
-      "Prometheus",
-      "Grafana",
-      "Loki",
-      "Alertmanager",
-      "Observability",
-      "Microservices",
-    ],
-    github:
-      "https://github.com/VatsalSolanki-01/microservices-observability-stack",
-    image: "/projects/microservices-observability-stack.png",
-  },
-];
-
-export const certifications: Certification[] = [
-  {
-    title: "AWS Certified Cloud Practitioner",
-    issuer: "Amazon Web Services",
-  },
-  {
-    title: "Google Cloud Engineering Certificate",
-    issuer: "Google Cloud",
   },
 ];
 
 export const contactContent = {
-  title: "Contact",
+  heading: "Let’s build something reliable and scalable.",
   description:
-    "If you’d like to discuss DevOps, cloud infrastructure, backend systems, projects, or opportunities, feel free to reach out.",
+    "If you want to discuss DevOps, backend engineering, cloud infrastructure, or potential opportunities, feel free to reach out.",
   email: "solanki.vatsal009@gmail.com",
   github: "https://github.com/VatsalSolanki-01/",
   linkedin: "https://www.linkedin.com/in/vatsal-solanki19/",
