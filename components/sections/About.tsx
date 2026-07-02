@@ -2,11 +2,14 @@ import { aboutContent } from "@/data/portfolio";
 
 export default function About() {
   return (
-    <section id="about" className="border-b border-[var(--border)] py-24">
-      <div className="mx-auto grid max-w-6xl gap-16 px-6 lg:grid-cols-[1fr_1.2fr]">
+    <section
+      id="about"
+      className="border-b border-[var(--border)] py-24 md:py-32"
+    >
+      <div className="mx-auto grid max-w-6xl gap-12 px-6 md:grid-cols-[1fr_1.2fr] md:gap-16">
         <div>
           <p className="text-sm uppercase tracking-[0.3em] text-[var(--muted)]">
-            {aboutContent.title}
+            About
           </p>
         </div>
 
@@ -22,12 +25,12 @@ export default function About() {
             ))}
           </div>
 
-          <div className="mt-12">
-            <h3 className="mb-5 text-sm uppercase tracking-[0.25em] text-[var(--muted)]">
-              Core Skills
-            </h3>
+          <div className="mt-10">
+            <p className="text-sm uppercase tracking-[0.3em] text-[var(--muted)]">
+              Skills
+            </p>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="mt-5 flex flex-wrap gap-3">
               {aboutContent.skills.map((skill) => (
                 <span
                   key={skill}
