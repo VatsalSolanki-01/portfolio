@@ -19,26 +19,85 @@ export const heroContent = {
 
 export const aboutContent = {
   paragraphs: [
-    "I’m a DevOps-focused engineer with a strong interest in cloud infrastructure, automation, backend systems, and observability.",
-    "I enjoy building projects that combine practical deployment workflows with real engineering depth, whether that’s containerizing services, setting up CI/CD pipelines, deploying to Kubernetes, or creating monitoring stacks that reflect how production systems are actually operated.",
-  ],
-  skills: [
-    "Computer Networking",
-    "Operating System",
-    "Linux",
-    "Git",
-    "GitHub",
-    "Docker",
-    "Docker Compose",
-    "Jenkins",
-    "Kubernetes",
-    "Grafana",
-    "Prometheus",
-    "Loki",
-    "Alertmanager",
-    "Go",
+    "I’m a DevOps focused engineer with a strong interest in cloud infrastructure, automation, backend systems, and observability.",
+    "I enjoy building projects that combine practical deployment workflows with real engineering depth, whether that means containerizing services, setting up CI/CD pipelines, deploying to Kubernetes, or building monitoring stacks that reflect how production systems are actually operated.",
   ],
 };
+
+export const techStack = [
+  {
+    category: "Cloud & Infrastructure",
+    items: [
+      {
+        name: "AWS",
+        logo: "/skills/aws.svg",
+      },
+      {
+        name: "Linux",
+        logo: "/skills/linux.svg",
+      },
+      {
+        name: "Docker",
+        logo: "/skills/docker.svg",
+      },
+      {
+        name: "Kubernetes",
+        logo: "/skills/kubernetes.svg",
+      },
+    ],
+  },
+  {
+    category: "CI/CD & Version Control",
+    items: [
+      {
+        name: "Jenkins",
+        logo: "/skills/jenkins.svg",
+      },
+      {
+        name: "Git",
+        logo: "/skills/git.svg",
+      },
+      {
+        name: "GitHub",
+        logo: "/skills/github.svg",
+      },
+    ],
+  },
+  {
+    category: "Observability",
+    items: [
+      {
+        name: "Prometheus",
+        logo: "/skills/prometheus.svg",
+      },
+      {
+        name: "Grafana",
+        logo: "/skills/grafana.svg",
+      },
+    ],
+  },
+  {
+    category: "Backend & Data",
+    items: [
+      {
+        name: "Go",
+        logo: "/skills/go.svg",
+      },
+      {
+        name: "MySQL",
+        logo: "/skills/mysql.svg",
+      },
+    ],
+  },
+];
+
+export const foundations = [
+  "Docker Compose",
+  "Loki",
+  "Alertmanager",
+  "Computer Networking",
+  "Operating System",
+];
 
 export const experience = [
   {
@@ -48,9 +107,9 @@ export const experience = [
     duration: "3 months",
     location: "Ahmedabad",
     points: [
-      "Collaborated closely with developers to improve release stability and maintain structured API documentation, enabling smoother integrations and clearer cross team communication.",
-      "Designed and implemented the monitoring and observability stack using Prometheus, Grafana, Node Exporter, Loki, and Promtail to track system metrics, visualize performance data, and centralize log management.",
-      "Took initiative to reduce manual effort by developing CLI based utilities to automate parts of the API documentation workflow, gaining hands on experience in real world DevOps practices within a production setup.",
+      "Improved release stability and API documentation workflows by collaborating closely with developers.",
+      "Built an observability stack with Prometheus, Grafana, Node Exporter, Loki, and Promtail for metrics and logs.",
+      "Automated parts of the API documentation workflow using CLI utilities to reduce manual effort.",
     ],
     stack: [
       "Prometheus",
@@ -84,7 +143,12 @@ export const projects = [
   {
     title: "Randomverse API",
     description:
-      "A hands-on DevOps project focused on Docker containerization, Jenkins CI/CD automation, Docker Hub image management, and automated Railway deployment.",
+      "A DevOps focused CI/CD project for automating Docker image builds, registry pushes, and Railway deployments using Jenkins.",
+    bullets: [
+      "Built a Jenkins pipeline to automate Docker build, push, and deployment flow.",
+      "Used Docker Hub as the image registry for versioned container delivery.",
+      "Deployed the containerized application to Railway for automated releases.",
+    ],
     github: "https://github.com/VatsalSolanki-01/randomverse-api",
     live: "",
     image: "/projects/Randomverse.jpeg",
@@ -93,17 +157,34 @@ export const projects = [
   {
     title: "Microservices Observability Stack",
     description:
-      "This project builds a complete observability environment for a microservices based system using open source monitoring tools. Application servers run microservices along with monitoring agents that collect metrics and logs. These signals are then sent to a centralized monitoring server where they are stored, visualized, and used for alerting. This setup simulates how real world DevOps and SRE teams monitor production systems.",
+      "A complete observability setup for monitoring microservices using metrics, logs, dashboards, and alerting tools.",
+    bullets: [
+      "Collected system metrics with Node Exporter and scraped them using Prometheus.",
+      "Centralized application logs with Promtail and Loki for easier debugging.",
+      "Built Grafana dashboards and configured Alertmanager for service health alerts.",
+    ],
     github:
       "https://github.com/VatsalSolanki-01/microservices-observability-stack",
     live: "",
     image: "/projects/microservices-observability-stack.png",
-    stack: ["Prometheus", "Grafana", "Loki", "Alertmanager", "Docker"],
+    stack: [
+      "Prometheus",
+      "Grafana",
+      "Loki",
+      "Alertmanager",
+      "Promtail",
+      "Docker",
+    ],
   },
   {
     title: "JobTracker",
     description:
-      "JobTracker is a containerized web application consisting of a React frontend, Go backend, MySQL database, and Nginx reverse proxy. The project demonstrates how modern DevOps teams automate software delivery using Jenkins pipelines and Kubernetes. Whenever code is pushed to GitHub, Jenkins automatically builds Docker images, pushes them to Docker Hub, and deploys the latest version of the application to a Kubernetes cluster.",
+      "A containerized multi service application deployed through a Jenkins driven CI/CD pipeline to Kubernetes.",
+    bullets: [
+      "Built a CI/CD pipeline to build Docker images and deploy them to Kubernetes.",
+      "Containerized a React frontend, Go backend, MySQL database, and Nginx reverse proxy.",
+      "Configured Kubernetes Deployments and Services for rollout based application delivery.",
+    ],
     github: "https://github.com/VatsalSolanki-01/jobtracker",
     live: "",
     image: "/projects/jobtracker.jpeg",
