@@ -1,5 +1,6 @@
 export const navItems = [
   { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
   { label: "Certifications", href: "#certifications" },
   { label: "Contact", href: "#contact" },
@@ -39,9 +40,44 @@ export const aboutContent = {
   ],
 };
 
+export const experience = [
+  {
+    role: "DevOps Engineering Intern",
+    company: "Aries.com",
+    logo: "/company-logos/aries.svg",
+    duration: "3 months",
+    location: "Ahmedabad",
+    points: [
+      "Collaborated closely with developers to improve release stability and maintain structured API documentation, enabling smoother integrations and clearer cross team communication.",
+      "Designed and implemented the monitoring and observability stack using Prometheus, Grafana, Node Exporter, Loki, and Promtail to track system metrics, visualize performance data, and centralize log management.",
+      "Took initiative to reduce manual effort by developing CLI based utilities to automate parts of the API documentation workflow, gaining hands on experience in real world DevOps practices within a production setup.",
+    ],
+    stack: [
+      "Prometheus",
+      "Grafana",
+      "Node Exporter",
+      "Loki",
+      "Promtail",
+      "CLI Automation",
+    ],
+  },
+];
+
 export const certifications = [
-  "AWS Certified Cloud Practitioner",
-  "Google Cloud Engineering Certificate",
+  {
+    title: "AWS Cloud Practitioner Essentials",
+    issuer: "AWS",
+    year: "13/02/2025",
+    image: "/certifications/aws.png",
+    credentialUrl: "",
+  },
+  {
+    title: "Google Cloud Engineering Certificate",
+    issuer: "Google Cloud",
+    year: "05/09/2025",
+    image: "/certifications/google-cloud-engineering-certificate.png",
+    credentialUrl: "",
+  },
 ];
 
 export const projects = [
