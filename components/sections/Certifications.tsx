@@ -14,11 +14,12 @@ export default function Certifications() {
           </p>
 
           <h2 className="mt-4 max-w-3xl text-3xl font-semibold text-[var(--foreground)] md:text-4xl">
-            Certifications and cloud learning milestones
+            Certifications and learning milestones
           </h2>
 
           <p className="mt-5 max-w-3xl text-base leading-8 text-[var(--muted)] md:text-lg">
-            Credentials that reflect my foundation in cloud concepts, platform services, and practical engineering workflows.
+            Certifications that reflect my learning in cloud infrastructure,
+            platform services, and practical engineering fundamentals.
           </p>
         </div>
 

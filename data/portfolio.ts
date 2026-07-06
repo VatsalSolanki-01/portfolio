@@ -8,9 +8,9 @@ export const navItems = [
 
 export const heroContent = {
   name: "Vatsal Solanki",
-  role: "DevOps Engineer",
+  role: "Hello, I am",
   intro:
-    "BCA (Hons) Cloud Computing Graduate AWS & Google Cloud Certified | DevOps Engineer skilled in Docker, Jenkins, Go, Linux, and cloud infrastructure. I build reliable, scalable systems with a strong focus on automation, observability, and backend engineering.",
+    "DevOps Engineer with hands on experience in containerization using Docker and Docker Compose, CI/CD automation with Jenkins, container orchestration with Kubernetes, AWS cloud infrastructure, and monitoring with Prometheus and Grafana. Focused on building reliable, scalable, and production ready infrastructure and deployment workflows.",
   location: "Ahmedabad, Gujarat",
   email: "solanki.vatsal009@gmail.com",
   github: "https://github.com/VatsalSolanki-01/",
@@ -19,8 +19,8 @@ export const heroContent = {
 
 export const aboutContent = {
   paragraphs: [
-    "I’m a DevOps focused engineer with a strong interest in cloud infrastructure, automation, backend systems, and observability.",
-    "I enjoy building projects that combine practical deployment workflows with real engineering depth, whether that means containerizing services, setting up CI/CD pipelines, deploying to Kubernetes, or building monitoring stacks that reflect how production systems are actually operated.",
+    "I’m a DevOps Engineer experienced in version control systems, containerization, CI/CD workflows, container orchestration, and monitoring and observability, with these skills built through working on practical DevOps projects. These projects have helped me develop a stronger understanding of networking, operating systems, cloud infrastructure, deployment automation, and how applications and services are managed in production style environments.",
+    "I hold AWS Cloud Practitioner and Google Cloud Engineering certifications, which further strengthen my foundation in cloud and infrastructure concepts.",
   ],
 };
 
@@ -29,15 +29,19 @@ export const techStack = [
     category: "Cloud & Infrastructure",
     items: [
       {
-        name: "AWS",
+        name: "AWS Services",
         logo: "/skills/aws.svg",
       },
       {
-        name: "Linux",
-        logo: "/skills/linux.svg",
+        name: "Docker",
+        logo: "/skills/docker.svg",
       },
       {
-        name: "Docker",
+        name: "Docker Compose",
+        logo: "/skills/docker.svg",
+      },
+      {
+        name: "Docker Hub",
         logo: "/skills/docker.svg",
       },
       {
@@ -64,7 +68,7 @@ export const techStack = [
     ],
   },
   {
-    category: "Observability",
+    category: "Monitoring & Observability",
     items: [
       {
         name: "Prometheus",
@@ -74,42 +78,60 @@ export const techStack = [
         name: "Grafana",
         logo: "/skills/grafana.svg",
       },
+      {
+        name: "Loki",
+        logo: "/skills/loki.png",
+      },
+      {
+        name: "Promtail",
+        logo: "/skills/loki.png",
+      },
+      {
+        name: "Node Exporter",
+        logo: "/skills/prometheus.svg",
+      },
+      {
+        name: "Alertmanager",
+        logo: "/skills/prometheus.svg",
+      },
     ],
   },
   {
-    category: "Backend & Data",
+    category: "Fundamentals & Programming",
     items: [
+      {
+        name: "Linux",
+        logo: "/skills/linux.svg",
+      },
+      {
+        name: "Networking",
+        logo: "/skills/networking.svg",
+      },
       {
         name: "Go",
         logo: "/skills/go.svg",
       },
       {
-        name: "MySQL",
-        logo: "/skills/mysql.svg",
+        name: "Bash Scripting",
+        logo: "/skills/bash.svg",
       },
     ],
   },
 ];
 
-export const foundations = [
-  "Docker Compose",
-  "Loki",
-  "Alertmanager",
-  "Computer Networking",
-  "Operating System",
-];
+export const foundations = [];
 
 export const experience = [
   {
     role: "DevOps Engineering Intern",
     company: "Aries.com",
     logo: "/company-logos/aries.svg",
-    duration: "3 months",
-    location: "Ahmedabad",
+    duration: "Duration: 3 months",
+    location: "Location: Ahmedabad",
     points: [
-      "Improved release stability and API documentation workflows by collaborating closely with developers.",
-      "Built an observability stack with Prometheus, Grafana, Node Exporter, Loki, and Promtail for metrics and logs.",
-      "Automated parts of the API documentation workflow using CLI utilities to reduce manual effort.",
+      "Collaborated with developers to improve release stability and maintain structured API documentation for smoother integrations.",
+      "Designed and implemented an observability stack using Prometheus, Grafana, Node Exporter, Loki, and Promtail for metrics and log monitoring.",
+      "Built CLI based utilities to automate parts of the API documentation workflow and reduce manual effort.",
     ],
     stack: [
       "Prometheus",
@@ -143,11 +165,11 @@ export const projects = [
   {
     title: "Randomverse API",
     description:
-      "A DevOps focused CI/CD project for automating Docker image builds, registry pushes, and Railway deployments using Jenkins.",
+      "A hands on DevOps project focused on Docker containerization, Jenkins CI/CD automation, Docker Hub image management, and automated Railway deployment.",
     bullets: [
-      "Built a Jenkins pipeline to automate Docker build, push, and deployment flow.",
-      "Used Docker Hub as the image registry for versioned container delivery.",
-      "Deployed the containerized application to Railway for automated releases.",
+      "Built a Jenkins CI/CD pipeline to build Docker images, push them to Docker Hub, and deploy the app to Railway.",
+      "Containerized the application with Docker for a consistent and repeatable deployment workflow.",
+      "Integrated GitHub, Jenkins, Docker Hub, and Railway into an end to end automated delivery pipeline.",
     ],
     github: "https://github.com/VatsalSolanki-01/randomverse-api",
     live: "",
@@ -157,11 +179,11 @@ export const projects = [
   {
     title: "Microservices Observability Stack",
     description:
-      "A complete observability setup for monitoring microservices using metrics, logs, dashboards, and alerting tools.",
+      "This project builds a complete observability environment for a microservices based system using open source monitoring tools.",
     bullets: [
-      "Collected system metrics with Node Exporter and scraped them using Prometheus.",
-      "Centralized application logs with Promtail and Loki for easier debugging.",
-      "Built Grafana dashboards and configured Alertmanager for service health alerts.",
+      "Built a microservices observability stack using Prometheus, Grafana, Loki, and Alertmanager for metrics, logs, dashboards, and alerting.",
+      "Configured monitoring agents to collect infrastructure metrics and service logs from application nodes.",
+      "Created a production style monitoring setup for faster failure detection and easier debugging across distributed services.",
     ],
     github:
       "https://github.com/VatsalSolanki-01/microservices-observability-stack",
@@ -170,20 +192,21 @@ export const projects = [
     stack: [
       "Prometheus",
       "Grafana",
+      "Node Exporter",
       "Loki",
-      "Alertmanager",
       "Promtail",
-      "Docker",
+      "Alertmanager",
+      "Docker Hub",
     ],
   },
   {
     title: "JobTracker",
     description:
-      "A containerized multi service application deployed through a Jenkins driven CI/CD pipeline to Kubernetes.",
+      "JobTracker is a containerized web application consisting of a React frontend, Go backend, MySQL database, and Nginx reverse proxy.",
     bullets: [
-      "Built a CI/CD pipeline to build Docker images and deploy them to Kubernetes.",
-      "Containerized a React frontend, Go backend, MySQL database, and Nginx reverse proxy.",
-      "Configured Kubernetes Deployments and Services for rollout based application delivery.",
+      "Built a multi service application with React, Go, MySQL, and Nginx, containerized with Docker for consistent environments.",
+      "Automated delivery with Jenkins to build images, push them to Docker Hub, and deploy the latest version to Kubernetes.",
+      "Defined Kubernetes Deployments and Services to simulate a production style container orchestration setup.",
     ],
     github: "https://github.com/VatsalSolanki-01/jobtracker",
     live: "",
@@ -195,15 +218,16 @@ export const projects = [
       "Nginx",
       "Docker",
       "Jenkins",
+      "Docker Hub",
       "Kubernetes",
+      "Minikube",
     ],
   },
 ];
 
 export const contactContent = {
-  heading: "Let’s build something reliable and scalable.",
-  description:
-    "If you want to discuss DevOps, backend engineering, cloud infrastructure, or potential opportunities, feel free to reach out.",
+  heading: "Let’s connect, learn and grow together.",
+  description: "",
   email: "solanki.vatsal009@gmail.com",
   github: "https://github.com/VatsalSolanki-01/",
   linkedin: "https://www.linkedin.com/in/vatsal-solanki19/",

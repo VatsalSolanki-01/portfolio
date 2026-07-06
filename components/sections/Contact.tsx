@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { contactContent } from "@/data/portfolio";
 
 export default function Contact() {
@@ -11,38 +12,55 @@ export default function Contact() {
             </p>
 
             <h2 className="mt-4 text-3xl font-semibold text-[var(--foreground)] md:text-4xl">
-              {contactContent.heading}
+              Let’s connect, learn and grow together.
             </h2>
-
-            <p className="mt-6 text-base leading-8 text-[var(--muted)] md:text-lg">
-              {contactContent.description}
-            </p>
           </div>
 
-          <div className="mt-10 flex flex-col gap-4 md:flex-row md:flex-wrap">
+          <div className="mt-10 flex flex-wrap items-center gap-4">
             <a
               href={`mailto:${contactContent.email}`}
-              className="inline-flex w-fit items-center rounded-full border border-[var(--border)] bg-[var(--background)] px-5 py-3 text-sm font-medium text-[var(--foreground)] transition hover:opacity-80"
+              aria-label="Send email"
+              className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[var(--border)] bg-[var(--background)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_14px_40px_rgba(0,0,0,0.08)]"
             >
-              {contactContent.email}
+              <Image
+                src="/contact/gmail.svg"
+                alt="Mail"
+                width={24}
+                height={24}
+                className="object-contain"
+              />
             </a>
 
             <a
               href={contactContent.github}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex w-fit items-center rounded-full border border-[var(--border)] bg-[var(--background)] px-5 py-3 text-sm font-medium text-[var(--foreground)] transition hover:opacity-80"
+              aria-label="GitHub"
+              className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[var(--border)] bg-[var(--background)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_14px_40px_rgba(0,0,0,0.08)]"
             >
-              GitHub
+              <Image
+                src="/contact/github.svg"
+                alt="GitHub"
+                width={24}
+                height={24}
+                className="object-contain"
+              />
             </a>
 
             <a
               href={contactContent.linkedin}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex w-fit items-center rounded-full border border-[var(--border)] bg-[var(--background)] px-5 py-3 text-sm font-medium text-[var(--foreground)] transition hover:opacity-80"
+              aria-label="LinkedIn"
+              className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[var(--border)] bg-[var(--background)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_14px_40px_rgba(0,0,0,0.08)]"
             >
-              LinkedIn
+              <Image
+                src="/contact/linkedin.svg"
+                alt="LinkedIn"
+                width={24}
+                height={24}
+                className="object-contain"
+              />
             </a>
           </div>
         </div>

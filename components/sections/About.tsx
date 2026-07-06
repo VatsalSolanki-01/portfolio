@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { aboutContent, foundations, techStack } from "@/data/portfolio";
+import { aboutContent, techStack } from "@/data/portfolio";
 
 export default function About() {
   return (
@@ -15,7 +15,7 @@ export default function About() {
             </p>
 
             <h2 className="mt-5 max-w-sm text-3xl font-semibold leading-tight tracking-tight text-[var(--foreground)] md:text-4xl">
-              Building reliable infrastructure with automation and visibility in mind
+              About me
             </h2>
           </div>
 
@@ -41,14 +41,9 @@ export default function About() {
               </p>
 
               <h3 className="mt-4 text-2xl font-semibold tracking-tight text-[var(--foreground)] md:text-3xl">
-                Tools and technologies I work with
+                Tool & Tech stack
               </h3>
             </div>
-
-            <p className="max-w-2xl text-sm leading-7 text-[var(--muted)] md:text-base">
-              My core stack spans cloud infrastructure, CI/CD automation, observability,
-              and backend engineering, with an emphasis on practical DevOps workflows.
-            </p>
           </div>
 
           <div className="mt-10 grid gap-6 lg:grid-cols-2">
@@ -87,27 +82,6 @@ export default function About() {
                 </div>
               </article>
             ))}
-          </div>
-
-          <div className="mt-12 rounded-[30px] border border-[var(--border)] bg-[var(--surface)] p-7 md:p-8">
-            <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
-              <div className="md:max-w-xs">
-                <p className="text-sm font-medium uppercase tracking-[0.24em] text-[var(--muted)]">
-                  Foundations & Supporting Tools
-                </p>
-              </div>
-
-              <div className="flex flex-wrap gap-3 md:max-w-3xl">
-                {foundations.map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-full border border-[var(--border)] bg-[var(--background)] px-4 py-2 text-sm text-[var(--foreground)]"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </div>

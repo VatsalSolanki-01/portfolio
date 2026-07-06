@@ -49,12 +49,13 @@ export default function Projects() {
           </p>
 
           <h2 className="mt-4 max-w-3xl text-3xl font-semibold text-[var(--foreground)] md:text-4xl">
-            Selected work and engineering focused builds
+            DevOps, backend, and infrastructure projects
           </h2>
 
           <p className="mt-5 max-w-3xl text-base leading-8 text-[var(--muted)] md:text-lg">
-            A selection of projects across DevOps, backend systems,
-            observability, CI/CD automation, and cloud infrastructure.
+            Projects focused on CI/CD automation, Kubernetes deployments,
+            observability, backend systems, and production style DevOps
+            workflows.
           </p>
         </motion.div>
 
@@ -76,7 +77,7 @@ export default function Projects() {
             >
               <div className="absolute inset-0 bg-[var(--background)]" />
 
-              <div className="relative z-10 grid h-[760px] lg:h-[640px] lg:grid-cols-2">
+              <div className="relative z-10 grid h-[820px] lg:h-[660px] lg:grid-cols-2">
                 <div className="flex h-full flex-col justify-between p-7 sm:p-8 md:p-10 lg:p-12">
                   <div>
                     <div className="flex items-center gap-3">
@@ -110,7 +111,7 @@ export default function Projects() {
                     </div>
                   </div>
 
-                  <div className="mt-10 flex flex-wrap gap-3">
+                  <div className="mt-10 flex flex-wrap gap-3 pb-4">
                     <a
                       href={project.github}
                       target="_blank"
@@ -159,7 +160,7 @@ export default function Projects() {
             </motion.article>
           ))}
 
-          <div className="h-[40rem] lg:h-[28rem]" />
+          <div className="h-[52rem] lg:h-[36rem]" />
         </motion.div>
       </div>
     </section>
